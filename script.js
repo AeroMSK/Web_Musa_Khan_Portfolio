@@ -258,3 +258,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   })
 })
+// ===============================
+// Visitor Counter (CountAPI)
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counterElement = document.getElementById("visitor-count");
+  if (!counterElement) return;
+
+  fetch("https://api.countapi.xyz/hit/aeromsk.github.io/portfolio-visits")
+    .then((res) => res.json())
+    .then((data) => {
+      counterElement.textContent = data.value.toLocaleString();
+    })
+    .catch((error) => {
+      console.error("Visitor counter error:", error);
+      counterElement.textContent = "—";
+    });
+});
