@@ -947,3 +947,14 @@ body::after {
   z-index: 1000;
 }
 
+.visitor-count {
+  color: #fff;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+}
+.visitor-count img {
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
