@@ -964,5 +964,33 @@ body::after {
   filter: drop-shadow(0 0 3px #00ffff);
   border-radius: 4px;
 }
+/* Mobile Responsive Visitor Counter */
+@media (max-width: 768px) {
+  #visitor-counter {
+    bottom: 8px; /* slightly closer to bottom */
+    right: 10px;  /* adjust for smaller screens */
+    font-size: 11px; /* smaller text for mobile */
+    padding: 4px 8px; /* smaller padding */
+  }
+
+  #visitor-counter img {
+    width: auto;
+    height: 14px; /* make the visitor badge smaller */
+  }
+}
+
+@media (max-width: 480px) {
+  #visitor-counter {
+    bottom: 6px;
+    right: 6px;
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  #visitor-counter img {
+    height: 12px;
+  }
+}
+
 
 
