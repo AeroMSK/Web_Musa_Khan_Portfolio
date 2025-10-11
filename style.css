@@ -932,29 +932,37 @@ body::after {
     transform: scale(1.05);
   }
 }
-
 #visitor-counter {
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   right: 20px;
-  font-family: monospace;
-  color: #00ffe5;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px 12px;
-  border-radius: 8px;
-  backdrop-filter: blur(6px);
-  font-size: 13px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #00ffff;
+  background: rgba(10, 14, 39, 0.85);
+  padding: 8px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.1);
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.visitor-count {
-  color: #fff;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  margin-top: 10px;
+#visitor-counter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.2);
 }
-.visitor-count img {
-  vertical-align: middle;
-  border-radius: 8px;
+
+#visitor-counter img {
+  height: 18px;
+  width: auto;
+  filter: drop-shadow(0 0 3px #00ffff);
+  border-radius: 4px;
 }
+
 
