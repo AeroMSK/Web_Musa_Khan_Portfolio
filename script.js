@@ -1,4 +1,6 @@
-// Hero typing animation
+// ===============================
+// ✨ Hero Typing Animation
+// ===============================
 const typingTexts = [
   "Full Stack Developer",
   "Visual & UI Aesthete",
@@ -7,292 +9,279 @@ const typingTexts = [
   "Code + Creativity Enthusiast",
   "Tech Explorer from IIUC",
   "Video Visionary",
-]
-let textIndex = 0
-let charIndex = 0
-let isDeleting = false
-const typingElement = document.querySelector(".hero-typing-text")
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.querySelector(".hero-typing-text");
 
 function typeText() {
-  const currentText = typingTexts[textIndex]
+  const currentText = typingTexts[textIndex];
 
   if (isDeleting) {
-    typingElement.textContent = currentText.substring(0, charIndex - 1)
-    charIndex--
+    typingElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
   } else {
-    typingElement.textContent = currentText.substring(0, charIndex + 1)
-    charIndex++
+    typingElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
   }
 
-  let typeSpeed = isDeleting ? 50 : 100
+  let typeSpeed = isDeleting ? 50 : 100;
 
   if (!isDeleting && charIndex === currentText.length) {
-    typeSpeed = 2000
-    isDeleting = true
+    typeSpeed = 2000;
+    isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
-    isDeleting = false
-    textIndex = (textIndex + 1) % typingTexts.length
-    typeSpeed = 500
+    isDeleting = false;
+    textIndex = (textIndex + 1) % typingTexts.length;
+    typeSpeed = 500;
   }
 
-  setTimeout(typeText, typeSpeed)
+  setTimeout(typeText, typeSpeed);
 }
 
-// Start typing animation when page loads
 document.addEventListener("DOMContentLoaded", () => {
-  typeText()
-})
+  typeText();
+});
 
-// Animated counter for stats
+// ===============================
+// 📊 Animated Counter for Stats
+// ===============================
 function animateCounter(element) {
-  const target = Number.parseInt(element.getAttribute("data-target"))
-  const duration = 2000
-  const increment = target / (duration / 16)
-  let current = 0
+  const target = Number.parseInt(element.getAttribute("data-target"));
+  const duration = 2000;
+  const increment = target / (duration / 16);
+  let current = 0;
 
   const updateCounter = () => {
-    current += increment
+    current += increment;
     if (current < target) {
-      element.textContent = Math.floor(current)
-      requestAnimationFrame(updateCounter)
+      element.textContent = Math.floor(current);
+      requestAnimationFrame(updateCounter);
     } else {
-      element.textContent = target
+      element.textContent = target;
     }
-  }
+  };
 
-  updateCounter()
+  updateCounter();
 }
 
-// Intersection Observer for counter animation
 const observerOptions = {
   threshold: 0.5,
   rootMargin: "0px",
-}
+};
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      const counters = entry.target.querySelectorAll(".stat-number")
+      const counters = entry.target.querySelectorAll(".stat-number");
       counters.forEach((counter) => {
         if (counter.textContent === "0") {
-          animateCounter(counter)
+          animateCounter(counter);
         }
-      })
-      observer.unobserve(entry.target)
+      });
+      observer.unobserve(entry.target);
     }
-  })
-}, observerOptions)
+  });
+}, observerOptions);
 
-// Observe the stats section
-const statsSection = document.querySelector("#home")
+const statsSection = document.querySelector("#home");
 if (statsSection) {
-  observer.observe(statsSection)
+  observer.observe(statsSection);
 }
 
-// Mobile menu functionality
-const mobileMenuBtn = document.getElementById("mobile-menu-btn")
-const leftSidebar = document.getElementById("left-sidebar")
-const mobileOverlay = document.getElementById("mobile-overlay")
-const closeLeftSidebarBtn = document.getElementById("close-left-sidebar")
+// ===============================
+// 📱 Mobile Menu Functionality
+// ===============================
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const leftSidebar = document.getElementById("left-sidebar");
+const mobileOverlay = document.getElementById("mobile-overlay");
+const closeLeftSidebarBtn = document.getElementById("close-left-sidebar");
 
 function toggleMobileMenu() {
-  leftSidebar.classList.toggle("active")
-  mobileOverlay.classList.toggle("active")
-  document.body.classList.toggle("left-sidebar-open")
+  leftSidebar.classList.toggle("active");
+  mobileOverlay.classList.toggle("active");
+  document.body.classList.toggle("left-sidebar-open");
 }
 
 if (mobileMenuBtn) {
-  mobileMenuBtn.addEventListener("click", toggleMobileMenu)
+  mobileMenuBtn.addEventListener("click", toggleMobileMenu);
 }
 
 if (mobileOverlay) {
-  mobileOverlay.addEventListener("click", toggleMobileMenu)
+  mobileOverlay.addEventListener("click", toggleMobileMenu);
 }
 
 if (closeLeftSidebarBtn) {
-  closeLeftSidebarBtn.addEventListener("click", toggleMobileMenu)
+  closeLeftSidebarBtn.addEventListener("click", toggleMobileMenu);
 }
 
-const mobileRightSidebarBtn = document.getElementById("mobile-right-sidebar-btn")
-const rightSidebar = document.getElementById("right-sidebar")
-const mobileRightOverlay = document.getElementById("mobile-right-overlay")
-const closeRightSidebarBtn = document.getElementById("close-right-sidebar")
+const mobileRightSidebarBtn = document.getElementById("mobile-right-sidebar-btn");
+const rightSidebar = document.getElementById("right-sidebar");
+const mobileRightOverlay = document.getElementById("mobile-right-overlay");
+const closeRightSidebarBtn = document.getElementById("close-right-sidebar");
 
 function toggleRightSidebar() {
-  rightSidebar.classList.toggle("active")
-  mobileRightOverlay.classList.toggle("active")
-  document.body.classList.toggle("right-sidebar-open")
+  rightSidebar.classList.toggle("active");
+  mobileRightOverlay.classList.toggle("active");
+  document.body.classList.toggle("right-sidebar-open");
 }
 
 if (mobileRightSidebarBtn) {
-  mobileRightSidebarBtn.addEventListener("click", toggleRightSidebar)
+  mobileRightSidebarBtn.addEventListener("click", toggleRightSidebar);
 }
 
 if (mobileRightOverlay) {
-  mobileRightOverlay.addEventListener("click", toggleRightSidebar)
+  mobileRightOverlay.addEventListener("click", toggleRightSidebar);
 }
 
 if (closeRightSidebarBtn) {
-  closeRightSidebarBtn.addEventListener("click", toggleRightSidebar)
+  closeRightSidebarBtn.addEventListener("click", toggleRightSidebar);
 }
 
 // Close mobile menu when clicking nav links
-const navLinks = document.querySelectorAll(".nexus-nav-item")
+const navLinks = document.querySelectorAll(".nexus-nav-item");
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     if (window.innerWidth <= 1024) {
       if (leftSidebar.classList.contains("active")) {
-        toggleMobileMenu()
+        toggleMobileMenu();
       }
     }
-  })
-})
+  });
+});
 
-// Active navigation highlighting based on scroll
-const sections = document.querySelectorAll("section[id]")
-const mainContent = document.getElementById("main-content")
+// ===============================
+// 🧭 Active Navigation Highlighting
+// ===============================
+const sections = document.querySelectorAll("section[id]");
+const mainContent = document.getElementById("main-content");
 
 function updateActiveNav() {
-  const scrollY = mainContent.scrollTop
+  const scrollY = mainContent.scrollTop;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100
-    const sectionHeight = section.offsetHeight
-    const sectionId = section.getAttribute("id")
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
 
     if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
       navLinks.forEach((link) => {
-        link.classList.remove("active")
+        link.classList.remove("active");
         if (link.getAttribute("data-section") === sectionId) {
-          link.classList.add("active")
+          link.classList.add("active");
         }
-      })
+      });
     }
-  })
+  });
 }
 
 if (mainContent) {
-  mainContent.addEventListener("scroll", updateActiveNav)
+  mainContent.addEventListener("scroll", updateActiveNav);
 }
 
-// Scroll progress indicator
-const scrollProgress = document.getElementById("scroll-progress")
+// ===============================
+// 📈 Scroll Progress Indicator
+// ===============================
+const scrollProgress = document.getElementById("scroll-progress");
 
 function updateScrollProgress() {
-  const scrollTop = mainContent.scrollTop
-  const scrollHeight = mainContent.scrollHeight - mainContent.clientHeight
-  const scrollPercentage = (scrollTop / scrollHeight) * 100
-  scrollProgress.style.width = scrollPercentage + "%"
+  const scrollTop = mainContent.scrollTop;
+  const scrollHeight = mainContent.scrollHeight - mainContent.clientHeight;
+  const scrollPercentage = (scrollTop / scrollHeight) * 100;
+  scrollProgress.style.width = scrollPercentage + "%";
 }
 
 if (mainContent && scrollProgress) {
-  mainContent.addEventListener("scroll", updateScrollProgress)
+  mainContent.addEventListener("scroll", updateScrollProgress);
 }
 
-// Real-time system clock
+// ===============================
+// ⏰ Real-Time System Clock
+// ===============================
 function updateSystemTime() {
-  const now = new Date()
+  const now = new Date();
 
-  // Format time (HH:MM:SS)
-  const hours = String(now.getHours()).padStart(2, "0")
-  const minutes = String(now.getMinutes()).padStart(2, "0")
-  const seconds = String(now.getSeconds()).padStart(2, "0")
-  const timeString = `${hours}:${minutes}:${seconds}`
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  const timeString = `${hours}:${minutes}:${seconds}`;
 
-  // Format date (Month Day, Year)
-  const options = { year: "numeric", month: "short", day: "numeric" }
-  const dateString = now.toLocaleDateString("en-US", options)
+  const options = { year: "numeric", month: "short", day: "numeric" };
+  const dateString = now.toLocaleDateString("en-US", options);
 
-  // Get timezone
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  const timezoneOffset = -now.getTimezoneOffset() / 60
-  const timezoneString = `UTC${timezoneOffset >= 0 ? "+" : ""}${timezoneOffset}:00`
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const timezoneOffset = -now.getTimezoneOffset() / 60;
+  const timezoneString = `UTC${timezoneOffset >= 0 ? "+" : ""}${timezoneOffset}:00`;
 
-  // Update DOM elements
-  const timeElement = document.getElementById("system-time")
-  const dateElement = document.getElementById("system-date")
-  const timezoneElement = document.getElementById("timezone")
+  const timeElement = document.getElementById("system-time");
+  const dateElement = document.getElementById("system-date");
+  const timezoneElement = document.getElementById("timezone");
 
-  if (timeElement) timeElement.textContent = timeString
-  if (dateElement) dateElement.textContent = dateString
-  if (timezoneElement) timezoneElement.textContent = timezoneString
+  if (timeElement) timeElement.textContent = timeString;
+  if (dateElement) dateElement.textContent = dateString;
+  if (timezoneElement) timezoneElement.textContent = timezoneString;
 }
 
-// Update uptime
-const startTime = new Date()
+// ===============================
+// ⏱️ Uptime Tracker
+// ===============================
+const startTime = new Date();
 
 function updateUptime() {
-  const now = new Date()
-  const diff = now - startTime
+  const now = new Date();
+  const diff = now - startTime;
 
-  const hours = Math.floor(diff / (1000 * 60 * 60))
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-  const uptimeString = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+  const uptimeString = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
+    2,
+    "0"
+  )}:${String(seconds).padStart(2, "0")}`;
 
-  const uptimeElement = document.getElementById("uptime")
-  if (uptimeElement) uptimeElement.textContent = uptimeString
+  const uptimeElement = document.getElementById("uptime");
+  if (uptimeElement) uptimeElement.textContent = uptimeString;
 }
 
-// Initialize time updates
-updateSystemTime()
-updateUptime()
-
-// Update every second
+updateSystemTime();
+updateUptime();
 setInterval(() => {
-  updateSystemTime()
-  updateUptime()
-}, 1000)
+  updateSystemTime();
+  updateUptime();
+}, 1000);
 
-// Smooth scroll for anchor links
+// ===============================
+// 🧭 Smooth Scroll for Anchors
+// ===============================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       mainContent.scrollTo({
         top: target.offsetTop - 20,
         behavior: "smooth",
-      })
+      });
     }
-  })
-})
+  });
+});
 
 // ===============================
-// Visitor Counter (CountAPI)
+// 🌍 Visitor Counter using CountAPI
 // ===============================
-
 document.addEventListener("DOMContentLoaded", () => {
-  const counterElement = document.getElementById("visitor-count")
-  if (!counterElement) return
-
-  fetch("https://api.countapi.xyz/hit/aeromsk.github.io/portfolio-visits")
-    .then((res) => res.json())
-    .then((data) => {
-      animateVisitorCounter(counterElement, data.value)
-    })
-    .catch((error) => {
-      console.error("Visitor counter error:", error)
-      counterElement.textContent = "—"
-    })
-})
-
-// Smooth animation for visitor count
-function animateVisitorCounter(element, targetValue) {
-  let currentValue = 0
-  const duration = 1200
-  const increment = targetValue / (duration / 16)
-
-  function update() {
-    currentValue += increment
-    if (currentValue < targetValue) {
-      element.textContent = Math.floor(currentValue).toLocaleString()
-      requestAnimationFrame(update)
-    } else {
-      element.textContent = targetValue.toLocaleString()
-    }
+  const countElement = document.getElementById("visitor-count");
+  if (countElement) {
+    fetch("https://api.countapi.xyz/hit/musa-portfolio.github.io/visits")
+      .then((res) => res.json())
+      .then((data) => {
+        countElement.textContent = data.value;
+      })
+      .catch((err) => {
+        console.error("Visitor counter error:", err);
+        countElement.textContent = "N/A";
+      });
   }
-
-  update()
-}
+});
