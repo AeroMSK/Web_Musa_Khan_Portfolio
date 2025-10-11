@@ -258,21 +258,41 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   })
 })
+
 // ===============================
 // Visitor Counter (CountAPI)
 // ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
-  const counterElement = document.getElementById("visitor-count");
-  if (!counterElement) return;
+  const counterElement = document.getElementById("visitor-count")
+  if (!counterElement) return
 
   fetch("https://api.countapi.xyz/hit/aeromsk.github.io/portfolio-visits")
     .then((res) => res.json())
     .then((data) => {
-      counterElement.textContent = data.value.toLocaleString();
+      animateVisitorCounter(counterElement, data.value)
     })
     .catch((error) => {
-      console.error("Visitor counter error:", error);
-      counterElement.textContent = "—";
-    });
-});
+      console.error("Visitor counter error:", error)
+      counterElement.textContent = "—"
+    })
+})
+
+// Smooth animation for visitor count
+function animateVisitorCounter(element, targetValue) {
+  let currentValue = 0
+  const duration = 1200
+  const increment = targetValue / (duration / 16)
+
+  function update() {
+    currentValue += increment
+    if (currentValue < targetValue) {
+      element.textContent = Math.floor(currentValue).toLocaleString()
+      requestAnimationFrame(update)
+    } else {
+      element.textContent = targetValue.toLocaleString()
+    }
+  }
+
+  update()
+}
