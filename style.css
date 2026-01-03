@@ -616,7 +616,7 @@ body::after {
 }
 
 .nexus-card img {
-  animation: float 3s ease-in-out infinite;
+  animation: none;
 }
 
 /* Mobile Menu Button Styles */
@@ -991,6 +991,7 @@ body::after {
     height: 12px;
   }
 }
+
 
 
 
