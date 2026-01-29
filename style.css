@@ -52,6 +52,7 @@ body::after {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(100vh);
   }
@@ -59,8 +60,8 @@ body::after {
 
 /* Improved sidebar styling with better padding and glow effects */
 .nexus-sidebar-left {
-  background: rgba(10, 14, 39, 0.95);
-  backdrop-filter: blur(30px);
+  background: rgba(10, 14, 39, 0.1);
+  backdrop-filter: blur(5px);
   border-right: 1px solid rgba(0, 255, 255, 0.3);
   box-shadow: 4px 0 30px rgba(0, 255, 255, 0.1);
   display: flex;
@@ -70,8 +71,8 @@ body::after {
 }
 
 .nexus-sidebar-right {
-  background: rgba(10, 14, 39, 0.95);
-  backdrop-filter: blur(30px);
+  background: rgba(10, 14, 39, 0.1);
+  backdrop-filter: blur(5px);
   border-left: 1px solid rgba(0, 255, 255, 0.3);
   box-shadow: -4px 0 30px rgba(0, 255, 255, 0.1);
   position: relative;
@@ -89,10 +90,12 @@ body::after {
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
   }
@@ -173,6 +176,7 @@ body::after {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
@@ -180,8 +184,8 @@ body::after {
 
 /* Enhanced cards with better glassmorphism and glow effects */
 .nexus-card {
-  background: rgba(26, 31, 58, 0.7);
-  backdrop-filter: blur(30px);
+  background: rgba(26, 31, 58, 0.1);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 1rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -213,8 +217,8 @@ body::after {
 
 /* Enhanced metric cards with floating animation */
 .nexus-metric-card {
-  background: rgba(26, 31, 58, 0.7);
-  backdrop-filter: blur(30px);
+  background: rgba(26, 31, 58, 0.1);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 1rem;
   padding: 1.25rem;
@@ -263,8 +267,8 @@ body::after {
 
 /* Enhanced timeline cards with better animations */
 .nexus-timeline-card {
-  background: rgba(26, 31, 58, 0.7);
-  backdrop-filter: blur(30px);
+  background: rgba(26, 31, 58, 0.1);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 1rem;
   padding: 1.25rem;
@@ -313,11 +317,13 @@ body::after {
 }
 
 @keyframes pulse-dot {
+
   0%,
   100% {
     transform: scale(1);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
   }
+
   50% {
     transform: scale(1.05);
     box-shadow: 0 0 35px rgba(0, 255, 255, 0.8);
@@ -326,8 +332,8 @@ body::after {
 
 /* Enhanced project cards with better video container styling */
 .nexus-project-card {
-  background: rgba(26, 31, 58, 0.7);
-  backdrop-filter: blur(30px);
+  background: rgba(26, 31, 58, 0.1);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 1rem;
   padding: 1.25rem;
@@ -360,7 +366,7 @@ body::after {
 .nexus-tech-badge {
   display: inline-block;
   padding: 0.4rem 0.875rem;
-  background: rgba(0, 255, 255, 0.15);
+  background: rgba(0, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.4);
   border-radius: 9999px;
   color: #00ffff;
@@ -380,7 +386,7 @@ body::after {
 .nexus-skill-badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(0, 255, 255, 0.15);
+  background: rgba(0, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.4);
   border-radius: 0.5rem;
   color: #00ffff;
@@ -398,7 +404,7 @@ body::after {
 
 .nexus-creative-item {
   padding: 1rem;
-  background: rgba(0, 255, 255, 0.08);
+  background: rgba(0, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 0.75rem;
   transition: all 0.3s ease;
@@ -424,7 +430,7 @@ body::after {
 .nexus-input {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(0, 255, 255, 0.08);
+  background: rgba(0, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 0.75rem;
   color: white;
@@ -463,10 +469,12 @@ body::after {
 }
 
 @keyframes gradient-shift {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -533,7 +541,7 @@ body::after {
   align-items: center;
   gap: 0.75rem;
   padding: 0.875rem 1rem;
-  background: rgba(0, 255, 255, 0.08);
+  background: rgba(0, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 0.75rem;
   color: #9ca3af;
@@ -568,10 +576,12 @@ body::after {
 }
 
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
+
   50% {
     border-color: #00ffff;
   }
@@ -606,10 +616,12 @@ body::after {
 
 /* Added floating animation for hero elements */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -678,6 +690,9 @@ body::after {
     z-index: 45;
     transform: translateX(-100%);
     padding-top: 60px;
+    background: #2a3b65;
+    border-right: 1px solid rgba(0, 255, 255, 0.9);
+    box-shadow: 5px 0 35px rgba(0, 0, 0, 0.7);
   }
 
   .nexus-sidebar-left.active {
@@ -693,6 +708,9 @@ body::after {
     z-index: 45;
     transform: translateX(100%);
     padding-top: 60px;
+    background: #2a3b65;
+    border-left: 1px solid rgba(0, 255, 255, 0.9);
+    box-shadow: -5px 0 35px rgba(0, 0, 0, 0.7);
   }
 
   .nexus-sidebar-right.active {
@@ -733,7 +751,7 @@ body::after {
   }
 
   /* Hide toggle buttons when sidebars are active */
-  .nexus-sidebar-left.active ~ #mobile-menu-btn,
+  .nexus-sidebar-left.active~#mobile-menu-btn,
   body.left-sidebar-open #mobile-menu-btn {
     opacity: 0;
     pointer-events: none;
@@ -773,8 +791,8 @@ body::after {
 
 /* Footer Styles */
 .nexus-footer {
-  background: rgba(10, 14, 39, 0.95);
-  backdrop-filter: blur(30px);
+  background: rgba(10, 14, 39, 0.1);
+  backdrop-filter: blur(5px);
   border-top: 1px solid rgba(0, 255, 255, 0.3);
   padding: 3rem 1.5rem 2rem;
   position: relative;
@@ -932,6 +950,7 @@ body::after {
     transform: scale(1.05);
   }
 }
+
 #visitor-counter {
   position: fixed;
   bottom: 20px;
@@ -964,18 +983,24 @@ body::after {
   filter: drop-shadow(0 0 3px #00ffff);
   border-radius: 4px;
 }
+
 /* Mobile Responsive Visitor Counter */
 @media (max-width: 768px) {
   #visitor-counter {
-    bottom: 8px; /* slightly closer to bottom */
-    right: 10px;  /* adjust for smaller screens */
-    font-size: 11px; /* smaller text for mobile */
-    padding: 4px 8px; /* smaller padding */
+    bottom: 8px;
+    /* slightly closer to bottom */
+    right: 10px;
+    /* adjust for smaller screens */
+    font-size: 11px;
+    /* smaller text for mobile */
+    padding: 4px 8px;
+    /* smaller padding */
   }
 
   #visitor-counter img {
     width: auto;
-    height: 14px; /* make the visitor badge smaller */
+    height: 14px;
+    /* make the visitor badge smaller */
   }
 }
 
@@ -991,7 +1016,3 @@ body::after {
     height: 12px;
   }
 }
-
-
-
-

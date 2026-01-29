@@ -60,12 +60,12 @@
     </button>
 
     <!-- Added mobile overlay -->
-    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden hidden"></div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 lg:hidden hidden"></div>
 
     <!-- Added mobile overlay for right sidebar -->
-    <div id="mobile-right-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden hidden"></div>
+    <div id="mobile-right-overlay" class="fixed inset-0 bg-black/50 z-40 lg:hidden hidden"></div>
 
-    <div class="flex h-screen overflow-hidden relative z-10">
+    <div class="flex h-screen overflow-hidden relative">
         <!-- Left Sidebar Navigation -->
         <!-- Added mobile menu classes and ID -->
         <aside id="left-sidebar" class="nexus-sidebar-left w-64 flex-shrink-0 overflow-y-auto mobile-sidebar">
@@ -266,7 +266,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <div class="text-4xl font-black text-white mb-1">5th</div>
+                            <div class="text-4xl font-black text-white mb-1">6th</div>
                             <div class="text-xs text-gray-500">CSE at IIUC</div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
 
                     <div class="nexus-card p-8">
                         <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                            A 5th-semester CSE student at IIUC, exploring web development, video editing, and creative
+                            A 6th-semester CSE student at IIUC, exploring web development, video editing, and creative
                             digital projects. Has interned in the Admin & HR Department at YSSE and currently
                             contributes as Executive Video Editor at IEEE ComSoc IIUC SBC. Passionate about learning and
                             working with Machine Learning and AI, crafting engaging digital content, and producing music
@@ -371,6 +371,17 @@
 
                         <div class="nexus-timeline-card">
                             <div class="flex items-start gap-4">
+                                <div class="nexus-timeline-dot">5</div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-cyan-400 mb-2">5th Semester</h3>
+                                    <p class="text-gray-400">ClassRep (Tools & Technologies, Internet Programming),
+                                        Modern 360° Webcam using ESP32 (Microprocessor)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nexus-timeline-card">
+                            <div class="flex items-start gap-4">
                                 <div class="nexus-timeline-dot">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -418,6 +429,31 @@
                     </div>
 
                     <div class="grid grid-cols-1 gap-6">
+                        <!-- Project New: ClassRep -->
+                        <div class="nexus-project-card group">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/3">
+                                    <div class="nexus-video-container">
+                                        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                                            <source src="videos/classrep.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <h3 class="text-2xl font-bold text-white mb-3">ClassRep</h3>
+                                    <p class="text-gray-400 mb-4">A comprehensive role-based platform for students and
+                                        Class Representatives. Features Smart Routines (M/F slots), Empty Room Finder,
+                                        and Course Channels for real-time announcements.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="nexus-tech-badge">Next.js 15</span>
+                                        <span class="nexus-tech-badge">Tailwind CSS</span>
+                                        <span class="nexus-tech-badge">Appwrite</span>
+                                        <span class="nexus-tech-badge">Shadcn/UI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Project 1 -->
                         <div class="nexus-project-card group">
                             <div class="flex flex-col md:flex-row gap-6">
